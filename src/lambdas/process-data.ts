@@ -6,7 +6,6 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
   logInfo('Processing data...');
   const inputData = JSON.parse(event.body || '{}');
   const result = await processData(inputData);
-  logInfo(`Data processed: ${JSON.parse(result)}.`);
 
   return {
     statusCode: 200,
