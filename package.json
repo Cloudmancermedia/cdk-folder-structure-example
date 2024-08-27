@@ -6,16 +6,20 @@
   },
   "scripts": {
     "build": "tsc",
+    "layers": "cd src/layers/nodejs && npm i && cd ../../..",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "deploy": "npm run layers && npm run build && cdk deploy --profile cloudmancer"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.143",
     "@types/jest": "^29.5.12",
     "@types/node": "20.14.9",
+    "@types/uuid": "^10.0.0",
+    "aws-cdk": "2.151.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.5",
-    "aws-cdk": "2.151.0",
     "ts-node": "^10.9.2",
     "typescript": "~5.5.3"
   },
